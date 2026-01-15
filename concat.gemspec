@@ -8,10 +8,11 @@ Gem::Specification.new do |spec|
   spec.authors = ["Nathan Kidd"]
   spec.email = ["nathankidd@hey.com"]
 
-  spec.summary = "Manage local mirrors of git repositories"
+  spec.summary = "Concatenate files from directories with optional extension filtering"
 
   spec.description = <<~DESC
-    Put a description here.
+    A simple CLI tool that recursively reads files from directories and outputs
+    their contents with file path comments. Supports filtering by file extensions.
   DESC
 
   spec.homepage = "https://github.com/n-at-han-k/concat"
