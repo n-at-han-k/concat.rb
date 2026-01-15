@@ -28,6 +28,25 @@ concat src/ lib/ --extensions=js,ts
 concat app/ --extensions=rb > backup.txt
 ```
 
+Example output:
+
+```
+# File path: ./lib/concat.rb
+# frozen_string_literal: true
+
+require_relative "concat/version"
+
+module Concat
+end
+
+# File path: ./lib/concat/version.rb
+# frozen_string_literal: true
+
+module Concat
+  VERSION = "1.0.0"
+end
+```
+
 ### deconcat
 
 Restore files from concatenated output. Reads from stdin and writes files to their original paths.
@@ -38,6 +57,21 @@ cat backup.txt | deconcat
 
 # Pipe directly
 concat lib/ --extensions=rb | deconcat
+```
+
+### Clipboard integration
+
+Use [clip.rb](https://github.com/n-at-han-k/clip.rb) to copy concatenated output to your clipboard:
+
+```bash
+# Copy to clipboard
+concat lib/ --extensions=rb | clip
+
+# Append to clipboard
+concat src/ | clip --append
+
+# Restore from clipboard
+clip | deconcat
 ```
 
 ## Contributing
