@@ -1,11 +1,11 @@
-# concat
+# concat.rb
 
 Concatenate files from directories into a single output, with the ability to reverse the process.
 
 ## Install
 
 ```bash
-gem install concat
+gem install concat.rb
 ```
 
 ## Usage
