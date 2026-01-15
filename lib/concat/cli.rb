@@ -38,3 +38,4 @@ module Concat
     end
   end
 end
+
