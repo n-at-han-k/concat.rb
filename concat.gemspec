@@ -3,7 +3,7 @@
 require_relative "lib/concat/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "concat"
+  spec.name = "concat.rb"
   spec.version = Concat::VERSION
   spec.authors = ["Nathan Kidd"]
   spec.email = ["nathankidd@hey.com"]
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
     their contents with file path comments. Supports filtering by file extensions.
   DESC
 
-  spec.homepage = "https://github.com/n-at-han-k/concat"
+  spec.homepage = "https://github.com/n-at-han-k/concat.rb"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
 
