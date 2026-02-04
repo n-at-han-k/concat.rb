@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mirrorfile (0.1.0)
+    concat.rb (1.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -45,8 +45,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  concat.rb!
   minitest (~> 5.0)
-  mirrorfile!
   rake (~> 13.0)
   rubocop (~> 1.21)
   yard (~> 0.9)

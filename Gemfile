@@ -2,7 +2,8 @@
 
 source "https://rubygems.org"
 
-gemspec
+gemspec name: "concat.rb"
+
 
 group :development do
   #gem "minitest", "~> 5.0"

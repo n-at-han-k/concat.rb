@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+if [ $# -eq 0 ]; then
+  bundle exec ruby -Itest -e 'Dir.glob("test/**/*_test.rb").each { |f| require "./#{f}" }'
+else
+  bundle exec ruby -Itest "$@"
+fi

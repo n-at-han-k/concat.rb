@@ -26,7 +26,7 @@ module Concat
 
       argv.each do |folder|
         Dir.glob("#{folder}/**/*#{extensions}").each do |path|
-          if File.file?(path)
+          if File.file?(path) && !binary_file?(path)
             puts "#{COMMENT} File path: #{path}"
             puts File.read(path)
             puts
@@ -35,6 +35,16 @@ module Concat
       end
 
       0
+    end
+
+    private
+
+    def binary_file?(path)
+      File.open(path, "rb") do |file|
+        chunk = file.read(8192)
+        return false if chunk.nil?
+        chunk.include?("\x00")
+      end
     end
   end
 end
