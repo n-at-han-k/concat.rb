@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    concat.rb (1.0.2)
+    concat.rb (1.1.0)
 
 GEM
   remote: https://rubygems.org/
