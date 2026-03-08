@@ -10,7 +10,7 @@ module Concat
       extensions = ""
 
       parser = OptionParser.new do |parse|
-        parse.banner = "Usage: concat FOLDERS... --extensions=rb,py,md"
+        parse.banner = "Usage: concat PATHS... --extensions=rb,py,md"
         parse.on("--extensions=LIST", String, "File extensions to include") do |value|
           extensions = ".{#{value}}"
         end
@@ -24,13 +24,23 @@ module Concat
         return 1
       end
 
-      argv.each do |folder|
-        Dir.glob("#{folder}/**/*#{extensions}").each do |path|
-          if File.file?(path) && !binary_file?(path)
-            puts "#{COMMENT} File path: #{path}"
-            puts File.read(path)
-            puts
+      argv.each do |arg|
+        if File.file?(arg)
+          next if binary_file?(arg)
+          puts "#{COMMENT} File path: #{arg}"
+          puts File.read(arg)
+          puts
+        elsif File.directory?(arg)
+          Dir.glob("#{arg}/**/*#{extensions}").each do |path|
+            if File.file?(path) && !binary_file?(path)
+              puts "#{COMMENT} File path: #{path}"
+              puts File.read(path)
+              puts
+            end
           end
+        else
+          warn "concat: #{arg}: No such file or directory"
+          return 1
         end
       end
 
