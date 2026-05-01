@@ -1,5 +1,7 @@
 # concat.rb
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/n-at-han-k/concat.rb)
+
 Concatenate files from directories into a single output, with the ability to reverse the process.
 
 ## Install
